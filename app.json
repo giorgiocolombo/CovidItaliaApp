@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "CovidItaliaApp",
-    "slug": "CovidItaliaApp",
+    "name": "CovidItalia",
+    "slug": "CovidItalia",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
