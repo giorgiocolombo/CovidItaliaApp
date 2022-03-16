@@ -38,25 +38,27 @@ export function Nazionale() {
 
     return (
       <ScrollView style={{paddingBottom: 30, marginTop: 10}}>
-        <CovidChart showError={showErrors} chartConfig={nationalChartConfig}/>
-        { datiStampaArray ? 
-          <View>
-            <CardList data={datiStampaArray} isProvince={false} />
-            <View style={{display: 'flex', alignItems: 'center', justifyContent: 'center', paddingVertical: 30}}>
-              { 
-                isLoadingDatiStampa
-                ? <Text>Caricamento...</Text>
-                : <Button
-                  onPress={() => {setFilterNumber(filterNumber + 5), setIsLoadingDatiStampa(true)}}
-                  title="Mostra altri"
-                  color="#007AFF"
-                  accessibilityLabel="Mostra Altri"
-                />
-              }
-            </View>
-          </View> :
-          null
-        }
+        <View>
+          <CovidChart showError={showErrors} chartConfig={nationalChartConfig}/>
+          { datiStampaArray ? 
+            <View>
+              <CardList data={datiStampaArray} isProvince={false} />
+              <View style={{display: 'flex', alignItems: 'center', justifyContent: 'center', paddingVertical: 30}}>
+                { 
+                  isLoadingDatiStampa
+                  ? <Text>Caricamento...</Text>
+                  : <Button
+                    onPress={() => {setFilterNumber(filterNumber + 5), setIsLoadingDatiStampa(true)}}
+                    title="Mostra altri"
+                    color="#007AFF"
+                    accessibilityLabel="Mostra Altri"
+                  />
+                }
+              </View>
+            </View> :
+            null
+          }
+        </View>
       </ScrollView>
     );
   }

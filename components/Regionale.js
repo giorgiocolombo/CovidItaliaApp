@@ -70,6 +70,7 @@ export function Regionale() {
 
     return (
       <ScrollView style={{paddingBottom: 30}}>
+        <View>
         <View style={{display: 'flex', flex:1, justifyContent:'center', alignItems: 'center', paddingTop: 20, paddingBottom: 10}}>
         <SelectDropdown
           data={regionArray}
@@ -107,6 +108,7 @@ export function Regionale() {
           </View> :
           null
         }
+        </View>
       </ScrollView>
     );
   }
