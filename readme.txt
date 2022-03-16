@@ -1,1 +1,1 @@
-React native app created from the same origin of https://homedev.cloud/covid_italia with the data of this repo https://github.com/pcm-dpc/COVID-19
+React native app created from the same origin of https://homedev.cloud/covid_italia with data from this repo https://github.com/pcm-dpc/COVID-19
