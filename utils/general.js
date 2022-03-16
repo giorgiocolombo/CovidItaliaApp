@@ -13,23 +13,19 @@ export const getTotal = (json, arg) => {
         {
           data: getTotal(json, "totale_casi"),
           color: (opacity = 1) => `rgba(255, 99, 132, ${opacity})`, // optional
-          strokeWidth: 1 // optional
         }] 
       :[
         {
           data: getTotal(json, "totale_casi"),
           color: (opacity = 1) => `rgba(255, 99, 132, ${opacity})`, // optional
-          strokeWidth: 1 // optional
         },
         {
           data: getTotal(json, "totale_positivi"),
           color: (opacity = 1) => `rgba(54, 162, 235, ${opacity})`, // optional
-          strokeWidth: 1 // optional
         },
         {
           data: getTotal(json, "dimessi_guariti"),
           color: (opacity = 1) => `rgba(255, 206, 86, ${opacity})`, // optional
-          strokeWidth: 1 // optional
         },
         {
           data: getTotal(json, "deceduti"),

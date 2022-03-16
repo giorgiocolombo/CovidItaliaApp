@@ -14,7 +14,7 @@ export function CovidChart(props){
               legend: isProvince ? ["Casi totali"] : ["Casi totali", "Infetti", "Guariti", "Deceduti" ]
             }}
             width={Dimensions.get("window").width} // from react-native
-            height={Dimensions.get("window").width / 1.3}
+            height={Dimensions.get("window").height / 2}
             chartConfig={{
               backgroundColor: "#fff",
               backgroundGradientFrom: "#fff",
