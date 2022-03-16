@@ -57,7 +57,6 @@ export function Regionale() {
     useEffect(() => {
       if(fetchedData && selectedRegion){
         setRegionalChartConfig(datiAndamentoTotale(transformForGeneralFunction(fetchedData, selectedRegion)));
-        setDatiStampaArray(datiStampa(fetchedData.filter(data => data.denominazione_regione === selectedRegion), filterNumber, false, false));
       }
     }, [selectedRegion, fetchedData])
 
@@ -67,6 +66,10 @@ export function Regionale() {
         setIsLoadingDatiStampa(false);
       }
     }, [filterNumber])
+
+    const showDatiStampa = () =>{
+      setDatiStampaArray(datiStampa(fetchedData.filter(data => data.denominazione_regione === selectedRegion), filterNumber, false, false));
+    }
 
     return (
       <ScrollView style={{paddingBottom: 30}}>
@@ -105,7 +108,14 @@ export function Regionale() {
               }
             </View>
           </View> :
-          null
+          <View style={{display: 'flex', alignItems: 'center', justifyContent: 'center', paddingVertical: 30}}>
+            <Button
+              onPress={() => showDatiStampa()}
+              title="Mostra Dati"
+              color="#007AFF"
+              accessibilityLabel="Mostra Dati"
+            />
+          </View>
         }
       </ScrollView>
     );

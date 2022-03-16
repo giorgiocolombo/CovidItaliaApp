@@ -21,7 +21,6 @@ export function Nazionale() {
       })
       .then((json) => {
         setNationalChartConfig(datiAndamentoTotale(json));
-        setDatiStampaArray(datiStampa(json, filterNumber, true, false));
         setFetchedData(json);
       })
       .catch(() => {
@@ -35,6 +34,10 @@ export function Nazionale() {
       setIsLoadingDatiStampa(false);
     }
   }, [filterNumber])
+
+  const showDatiStampa = () =>{
+    setDatiStampaArray(datiStampa(fetchedData, filterNumber, true, false));
+  }
 
     return (
       <ScrollView style={{paddingBottom: 30, marginTop: 10}}>
@@ -55,7 +58,14 @@ export function Nazionale() {
               }
             </View>
           </View> :
-          null
+          <View style={{display: 'flex', alignItems: 'center', justifyContent: 'center', paddingVertical: 30}}>
+            <Button
+              onPress={() => showDatiStampa()}
+              title="Mostra Dati"
+              color="#007AFF"
+              accessibilityLabel="Mostra Dati"
+            />
+          </View>
         }
       </ScrollView>
     );

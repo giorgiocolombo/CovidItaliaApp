@@ -61,7 +61,6 @@ export function Provinciale() {
     useEffect(() => {
       if(fetchedData && selectedProvince){
         setProvincealChartConfig(datiAndamentoTotale(transformForGeneralFunction(fetchedData, selectedProvince), true));
-        setDatiStampaArray(datiStampa(fetchedData.filter(data => data.denominazione_provincia === selectedProvince), filterNumber, false, true));
       }
     }, [selectedProvince, fetchedData])
 
@@ -71,6 +70,10 @@ export function Provinciale() {
         setIsLoadingDatiStampa(false);
       }
     }, [filterNumber])
+
+    const showDatiStampa = () =>{
+      setDatiStampaArray(datiStampa(fetchedData.filter(data => data.denominazione_provincia === selectedProvince), filterNumber, false, true));
+    }
 
     return (
       <ScrollView style={{paddingBottom: 30}}>
@@ -109,7 +112,14 @@ export function Provinciale() {
               }
             </View>
           </View> :
-          null
+          <View style={{display: 'flex', alignItems: 'center', justifyContent: 'center', paddingVertical: 30}}>
+            <Button
+              onPress={() => showDatiStampa()}
+              title="Mostra Dati"
+              color="#007AFF"
+              accessibilityLabel="Mostra Dati"
+            />
+          </View>
         }
       </ScrollView>
     );
